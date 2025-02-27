@@ -1,0 +1,9 @@
+/bb/assets/*        /assets/:splat   200
+/bb/content/*       /content/:splat  200
+/bb/agents/*        /agents/:splat   200
+/bb/images/*        /images/:splat   200
+/bb-dash/assets/*   /assets/:splat   200
+/bb-dash/content/*  /content/:splat  200
+/bb-dash/agents/*   /agents/:splat   200
+/bb-dash/images/*   /images/:splat   200
+/*                  /index.html      200

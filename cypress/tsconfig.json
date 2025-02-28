@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "types": [
-      "cypress", "@4tw/cypress-drag-drop"
+      "cypress"
     ]
   },
   "include": [

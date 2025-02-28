@@ -4,3 +4,4 @@
 /devApp1/content/*    /content/:splat   200
 /devApp1/images/*     /images/:splat    200
 /devApp1/*            /devApp1/:splat   200
+/*                  /index.html      200

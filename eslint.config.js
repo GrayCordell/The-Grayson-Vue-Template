@@ -5,10 +5,9 @@ import { scopedConstructPlugin } from 'eslint-plugin-scoped-construct'
 
 export default antfu(
   {
-    unocss: false, // its technically used, but we don't currently use the utility css part right now.
+    unocss: false, // its technically used, but we don't currently use the utility css part right now. Enable if you do.
     formatters: true,
     test: true,
-
     lessOpinionated: false,
     toml: false,
     svelte: false,

@@ -1,0 +1,74 @@
+{
+  "vite.port": 5001,
+  "vite.devCommand": "pnpm dev",
+  "vite.https": true,
+  "oxc.enable": false,
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+
+  // Disable the default formatter
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // The following is optional.
+  // It's better to put under project setting `.vscode/settings.json`
+  // to avoid conflicts with working with different eslint configs
+  // that does not support all formats.
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/distributions": true,
+    "**/dist": true,
+    "**/logs": true,
+    "**/public": true,
+    "**/coverage": true,
+  },
+
+    "cSpell.ignorePaths": [
+        "node_modules",        // this will ignore anything the node_modules directory
+        "vscode-extension",    //
+        ".git",                // Ignore the .git directory
+        "*.dll",               // Ignore all .dll files.
+        "**/*.dll",             // Ignore all .dll files
+        "**/*.log",            // Ignore all .log files
+        "distributions",            // Ignore distributions directory
+        "dist",            // Ignore dist directory
+        "build",            // Ignore build directory
+    ],
+
+}

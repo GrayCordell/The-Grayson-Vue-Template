@@ -1,0 +1,51 @@
+// cSpell Settings
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "ATMPT",
+    "Bettys",
+    "bettysbrain",
+    "boxs",
+    "deepchat",
+    "Deepgram",
+    "dndflow",
+    "flexsearch",
+    "grayson",
+    "Grayson",
+    "imengyu",
+    "intlify",
+    "isaddition",
+    "jenesius",
+    "knowlearning",
+    "mathfield",
+    "mathsteps",
+    "modyfi",
+    "Mult",
+    "nowheel",
+    "OELE",
+    "pannable",
+    "pcss",
+    "pinia",
+    "postcss",
+    "sizecheck",
+    "taze",
+    "unhead",
+    "Unocss",
+    "unplugin",
+    "uuidv",
+    "vueuse",
+    "vuex",
+    "webstorm",
+    "zoomable",
+
+    "Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm",
+  ],
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": []
+}

@@ -49,6 +49,9 @@ test/Intermediate/*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/cspell.json
 *.sw?
 
 .idea/*

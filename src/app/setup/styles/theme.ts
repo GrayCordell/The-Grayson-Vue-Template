@@ -1,4 +1,5 @@
 import { useDark } from '@vueuse/core'
+import { flags } from '~/app/environment/urlFlags'
 
 interface Scheme {
   variables: {
@@ -31,7 +32,7 @@ const allThemes: AllThemes = {
     },
   },
   mathKidsScheme: {
-    condition: () => false, // flags.getIsKids(),
+    condition: () => flags.getIsKids(),
     theme: {
       variables: {
         '--accent': '#7EC8E3',

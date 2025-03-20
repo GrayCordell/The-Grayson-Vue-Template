@@ -9,7 +9,7 @@
  * Notes:
    - Some things should likely be taken out. Most css should be in the components.(scoped)
    - "--whatever" are css variables. I use them only for globals. There is no reason I do this other than I like it.
-    -TODO  Color names are likely dumb throughout the app right now.
+   - Color names are likely dumb throughout the app.
  */
 
 @font-face {
@@ -17,7 +17,7 @@
   font-style: normal;
   font-display: auto;
   unicode-range: U+000-5FF;
-  /* font-family: 'Atkinson Hyperlegible', sans-serif; */
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 html,
@@ -54,9 +54,6 @@ body,
       scrollbar-color: var(--accent) var(--primary-darker); /* Adjust thumb and track colors */
     }
   }
-  /*firefox*/
-  /*  //scrollbar-width: thin;
-  //scrollbar-color: var(--accent) var(--primary-darker);*/
 }
 
 body {
@@ -64,10 +61,17 @@ body {
   --primary: #f8f8f8; /*Slightly off white now, used to be white */
   --primary-darker: #f2f2f2;
   --primary-darker-grey: lightgray;
+  --grey: grey;
   --secondary: black;
   --secondary-lighter: rgba(0, 0, 0, 0.7);
+  --font-color: black;
+
   --highlight: #deb887;
   --scrollbar-width: 6px;
+
+  /*CANVAS*/
+  --canvas-background-color: var(--primary);
+  --canvas-pattern-color: #b9b9b9;
 
   /* This is our main color other than white which is our general background color. Is kind of our theme color */
   --accent: #416ebd;
@@ -75,10 +79,65 @@ body {
   --accent-hover-darker: #375a9c;
   --accent-darker: #416ebd;
   --accent-dark-lighter: rgba(63, 1, 219, 0.28);
-  --accent-dark-lighterer: rgba(63, 1, 219, 0.1); /*//TODO idk fix later*/
+  --accent-dark-lighterer: rgba(63, 1, 219, 0.1);
+
+  /*
+    drag and drop box,
+  */
+  /* Primary Brand Colors */
+  --dnd-color-primary: var(--accent);
+  --dnd-color-primary-light: #6290df;
+  --dnd-color-primary-dark: #2d4d84;
+  --dnd-color-white: #ffffff;
+
+  /* Accent Colors */
+  --dnd-color-number: #2c4f9c;
+  --dnd-color-text: #2a324b;
+
+  /* Background Colors */
+  --dnd-bg-secondary: #f0f5ff;
+  --dnd-bg-special: #dce7ff;
+  --dnd-bg-input: #e8eeff;
+  --dnd-bg-tertiary: #f5f8ff;
+  --dnd-bg-highlight: #c5d5f9;
+
+  /* Border Colors */
+  --dnd-border-secondary: #416ebd;
+  --dnd-border-drop-zone: #4785d6;
+  --dnd-border-input: #3960a6;
+  --dnd-border-tool-box: #5581d6;
+  --dnd-border-work-area: #6290df;
+  --dnd-border-chat: #416ebd59;
+  --dnd-zone-default-highlight-shadow: rgba(65, 110, 189, 0.3);
+  /* Shadow Colors */
+  --dnd-shadow-work-area: rgba(65, 110, 189, 0.2);
+  --dnd-shadow-default: rgba(44, 79, 156, 0.2);
+  --dnd-shadow-light: rgba(65, 110, 189, 0.1);
+
+  /* Spacing */
+  --dnd-gap-default: 20px;
+  --dnd-gap-small: 10px;
+
+  /* Font Sizes */
+  --dnd-font-size-small: 15px;
+  --dnd-font-size-normal: 30px;
+  --dnd-font-size-large: 24px;
+  --dnd-font-size-xl: 36px;
+  --dnd-font-size-xxl: 60px;
+
+  /* Interactive State Colors */
+  --dnd-hover-background: #f5f8ff;
+  --dnd-active-background: #b8ccff;
+  --dnd-disabled-background: #e0e5f0;
+
+  --dnd-default-drop-zone-border: #4785d6; /* Slightly lighter than primary for border definition */
+  --dnd-default-drop-zone-background: #e8eeff; /* Very light blue background for contrast */
+  --dnd-default-drop-zone-highlight: #c5d5f9; /* Medium light blue for hover/highlight state */
+  --dnd-default-drop-zone-highlight-border: #6290df; /* Lighter primary for highlighted border */
+  --dnd-default-drop-zone-text-color: var(--secondary); /* Dark text color for contrast */
 
   /*font stuff just in case*/
-  /* --font-family: 'Atkinson Hyperlegible', sans-serif; */
+  --font-family: 'Atkinson Hyperlegible', sans-serif;
   --fa-font-path: '/assets/fonts';
   --fa-font-display: auto;
   --fa-font-weight: 400;
@@ -101,19 +160,13 @@ body {
   height: 100%;
   width: 100%;
 }
-body[color-scheme='dark'] {
-  /* TODO */
-}
-body[color-scheme='light'] {
-  /* TODO */
-}
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  /* font-family: 'Atkinson Hyperlegible', sans-serif; */
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 :root {
-  /* font-family: 'Atkinson Hyperlegible', sans-serif; */
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }

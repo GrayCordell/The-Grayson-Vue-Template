@@ -8,8 +8,13 @@
 
 import { env } from '~/app/environment/environment.config'
 
+const getIsKids = () => {
+  const urlParams = new URLSearchParams(window.location.search)
+  return urlParams.get('kids') === 'true'
+}
 
 export const flags = {
+  getIsKids,
   getUrlLanguageCodeOverride: () => {
     const urlParams = new URLSearchParams(window.location.search)
     return urlParams.get('lang')

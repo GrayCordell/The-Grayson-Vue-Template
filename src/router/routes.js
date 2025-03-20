@@ -15,6 +15,11 @@ export const ROUTES = [
     name: 'BaseView1',
     component: () => import('../views/BaseView1.vue'),
   },
+  {
+    path: `/${BASE}/progress-bar-demo`,
+    name: 'ProgressBarDemo',
+    component: () => import('../views/ProgressBarDemo.vue'),
+  },
   { path: `/${BASE}`, redirect: `/${BASE}/` },
 
 ]

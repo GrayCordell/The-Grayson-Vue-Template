@@ -1,39 +1,18 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "strict": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxImportSource": "vue",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "outDir": "./build",
-
-    "types": [
-      "unplugin-icons/types/vue",
-      "vitest",
-      "vite/client",
-      "@types/node"
-    ],
-    "paths": {
-      "~/*": ["src/*"],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
     }
+  ],
+  "compilerOptions": {
+    "module": "NodeNext"
   },
-  "vueCompilerOptions": {
-    "plugins": []
-  },
-  "exclude": [
-    "dist", "node_modules", "cypress",
-    "./src/assets/**/*",
-    "build", "./built/**/*", "docs", "public", "locales"
-  ]
+  "exclude": ["cypress"]
 }

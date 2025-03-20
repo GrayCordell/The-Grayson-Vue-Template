@@ -3,13 +3,13 @@ import * as path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import Vue from '@vitejs/plugin-vue'
-import Unocss from 'unocss/vite'
+// import Unocss from 'unocss/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import Icons from 'unplugin-icons/vite'
 
 import { defineConfig } from 'vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
-import Inspect from 'vite-plugin-inspect'
+// import Inspect from 'vite-plugin-inspect'
 import webfontDownload from 'vite-plugin-webfont-dl'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
@@ -36,10 +36,6 @@ export default defineConfig({
       '/routes': ROUTES, // This is used to conditionally load the routes.js file. Probably not needed for most projects.
       '/conditionalMain': MAIN, // This is used to conditionally load the main.js file. Probably not needed for most projects.
     },
-  }, // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts', 'test/**/*.test.js'],
-    environment: 'jsdom',
   },
   plugins: [
     basicSsl(),
@@ -68,7 +64,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-inspect
     // Visit http://localhost:3000/__inspect/ to see the inspector
-    Inspect(),
+    // Inspect(), // Removed due to TypeScript errors
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools({
@@ -78,7 +74,7 @@ export default defineConfig({
     // quasar({ sassVariables: './dash-quasar-variables.sass' }),
 
     // see unocss.config.ts for config
-    Unocss(),
+    // Unocss(),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18n({

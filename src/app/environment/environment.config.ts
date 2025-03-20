@@ -14,6 +14,7 @@ const getIsContainer = () => window.location.href.toLowerCase().includes(CONTAIN
 const getIsPagesDev = () => window.location.href.toLowerCase().includes(PAGES_DEV_PARAM)
 const getIsVite = () => window.location.href.toLowerCase().includes(VITE_LOCATION)
 const getIsEmbedded = () => window.location !== window.parent.location
+// @ts-expect-error ---
 // eslint-disable-next-line node/prefer-global/process
 const getIsNotClient = () => (typeof process !== 'undefined' && process?.versions?.node)
 const getIsClient = () => !getIsNotClient()

@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 /* eslint-disable ts/no-namespace */
 // ***********************************************************
 // This example support/component.ts is processed and
@@ -15,11 +15,6 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
-import './commands'
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
 
 import { mount } from 'cypress/vue'
 

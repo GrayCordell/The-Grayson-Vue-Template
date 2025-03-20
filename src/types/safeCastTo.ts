@@ -1,4 +1,4 @@
-/* eslint-disable jsdoc/check-alignment */
+
 // FROM ts-extras repo
 
 /**

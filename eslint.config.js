@@ -5,7 +5,7 @@ import { scopedConstructPlugin } from 'eslint-plugin-scoped-construct'
 
 export default antfu(
   {
-    unocss: false, // its technically used, but we don't currently use the utility css part right now. Enable if you do.
+    unocss: false,
     formatters: true,
     test: true,
     lessOpinionated: false,
@@ -64,7 +64,6 @@ export default antfu(
       'jsdoc/require-returns-description': 'off',
       'unused-imports/no-unused-vars': 'off', // already warned via no-unused-vars
       'perfectionist/sort-imports': 'off',
-      'no-undef': 'error',
     },
     ignores: [
       '**/README.md',

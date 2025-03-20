@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
+// https://on.cypress.io/api
 
-context('BaseView1', () => {
+describe('baseView1', () => {
   beforeEach(() => {
     cy.visit('/')
   })

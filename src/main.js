@@ -9,15 +9,11 @@ import { piniaStores } from './store'
 import router from './router/index.js'
 
 // Global styles
-import '~/app/setup/styles/index.pcss'
+import './app/setup/styles/index.pcss'
 
 // Simple alerts/toasts/context menus
 import VueSimpleAlert from 'vue3-simple-alert'
 import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css'
-
-// UNOCSS
-import 'uno.css'
-import 'virtual:unocss-devtools'
 
 // i18n
 import { i18n, i18nSetup } from '~/app/setup/i18n'

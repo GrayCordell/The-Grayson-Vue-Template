@@ -8,7 +8,7 @@
     "pnpm": ">=9.12.2"
   },
   "scripts": {
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p typecheck \"build-only {@}\" --",
     "buildForDebug": "vite build --minify false --emptyOutDir --debug",
     "build-only": "vite build",
     "dev": "vite --port 5001",
@@ -22,7 +22,7 @@
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
     "test:unit": "vitest",
-    "type-check": "vue-tsc --build",
+    "typecheck": "vue-tsc --build",
     "up": "taze major -I"
   },
   "dependencies": {

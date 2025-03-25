@@ -65,7 +65,7 @@ const problems: MathProblemStoreState['problems'] = [
   },
 ].map((problem) => {
   const fixedOptions = makeOptions(problem.options).map((option) => {
-    if (option.text === problem.correctAnswer) {
+    if (option.isTheCorrectOption) {
       return {
         ...option,
         isTheCorrectOption: true,

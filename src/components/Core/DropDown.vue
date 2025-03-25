@@ -5,7 +5,7 @@ import type { Ref } from 'vue'
 // Define the props with TypeScript interface
 interface Props {
   options: any[]
-  label: string
+  label?: string
 }
 
 // Use withDefaults for default prop values and better type inference

@@ -1,4 +1,5 @@
 import { useBasicStore } from '~/store/basicStore'
+import { useMathProblemStore } from '~/store/mathProblemStore'
 
 // interface PiniaStores {
 //   mathMapStore: typeof useMathMapStore
@@ -9,9 +10,11 @@ import { useBasicStore } from '~/store/basicStore'
 // }
 interface PiniaStores {
   basicStore: typeof useBasicStore
+  mathProblemStore: typeof useMathProblemStore
 }
 export const piniaStores: PiniaStores = {
   basicStore: useBasicStore,
+  mathProblemStore: useMathProblemStore,
 }
 
 export const usePiniaStores = (): { [K in keyof PiniaStores]: ReturnType<PiniaStores[K]> } => {

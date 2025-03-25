@@ -20,6 +20,11 @@ export const ROUTES = [
     name: 'ProgressBarDemo',
     component: () => import('../views/ProgressBarDemo.vue'),
   },
+  {
+    path: `/${BASE}/math-problem-demo`,
+    name: 'MathProblemDemo',
+    component: () => import('../views/MathProblemDemo.vue'),
+  },
   { path: `/${BASE}`, redirect: `/${BASE}/` },
 
 ]

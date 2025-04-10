@@ -35,6 +35,7 @@ export default antfu(
 
     // https://typescript-eslint.io/
     typescript: {
+      // tsconfigPath: 'tsconfig.json', // <-- Enable/uncomment for type aware rules. I have it usually disabled for performance reasons.
       overrides: {
         'ts/strict-boolean-expressions': 'off',
         'ts/no-require-imports': 'off',

@@ -3,7 +3,7 @@
  * @file MathJax.vue
  */
 import { computed, toRefs } from 'vue'
-import { useRenderMathInElement } from '~/composibles/useRenderMathInElement' // Load CSS file as a string via ?inline
+import { useRenderMathInElement } from '~/composables/useRenderMathInElement' // Load CSS file as a string via ?inline
 import { asciiToLatexImproved } from '~/utils/asciiToLatexImproved'
 
 const props = withDefaults(defineProps<{

@@ -87,18 +87,18 @@ const deleteMistakeConcept = (id: string) => {
         />
       </div>
       <div class="sidebar-panel">
+        <ConceptsPanel
+          :concepts="mathStore.concepts"
+          @create-concept="createConcept"
+          @update-concept="updateConcept"
+          @delete-concept="deleteConcept"
+        />
         <MistakesPanel
           :mistake-concepts="mathStore.mistakeConcepts"
           :concepts="mathStore.concepts"
           @create-mistake="createMistakeConcept"
           @update-mistake="updateMistakeConcept"
           @delete-mistake="deleteMistakeConcept"
-        />
-        <ConceptsPanel
-          :concepts="mathStore.concepts"
-          @create-concept="createConcept"
-          @update-concept="updateConcept"
-          @delete-concept="deleteConcept"
         />
       </div>
     </div>

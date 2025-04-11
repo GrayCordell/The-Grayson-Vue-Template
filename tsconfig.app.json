@@ -4,15 +4,22 @@
   "exclude": ["src/**/__tests__/*", "./src/assets/**/*",  "docs", "cypress"],
   "compilerOptions": {
    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
    "strict": true,
    "noUnusedLocals": false,
    "strictNullChecks": true,
    "allowJs": true,
    "forceConsistentCasingInFileNames": true,
-   "types": ["unplugin-icons/types/vue"],
+   "types": [
+     "unplugin-icons/types/vue",
+     "@types/node",
+   ],
    "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
     }
+  },
+  "vueCompilerOptions": {
+    "strictTemplates": false,
   }
 }
 

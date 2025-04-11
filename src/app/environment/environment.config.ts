@@ -1,3 +1,5 @@
+import { getFeatureEnabled } from './urlFlagsHelper'
+
 const getIsLocalHost = () => window.location.href.includes('localhost/') || window.location.href.includes('localhost:')
 const BASE_PATH: string = import.meta.env.VITE_BASE_PATH || 'https://localhost'
 const DOMAIN: string = import.meta.env.VITE_DOMAIN || 'localhost'
@@ -10,14 +12,35 @@ const VITE_LOCATION = 'localhost:'
 const PAGES_DEV_PARAM = 'pages.dev' // ?pages.dev=true || &pages.dev
 
 export const getApplicationId = () => `/${import.meta.env.VITE_APPLICATION_ID}/` || '/devApp1/'
+
+
 const getIsContainer = () => window.location.href.toLowerCase().includes(CONTAINER_LOCATION)
-const getIsPagesDev = () => window.location.href.toLowerCase().includes(PAGES_DEV_PARAM)
-const getIsVite = () => window.location.href.toLowerCase().includes(VITE_LOCATION)
+const getIsPagesDev = () => getFeatureEnabled(PAGES_DEV_PARAM)
+const getIsVite = () => getFeatureEnabled(VITE_LOCATION)
 const getIsEmbedded = () => window.location !== window.parent.location
-// @ts-expect-error ---
+
 // eslint-disable-next-line node/prefer-global/process
 const getIsNotClient = () => (typeof process !== 'undefined' && process?.versions?.node)
 const getIsClient = () => !getIsNotClient()
+
+const getEnvMode = () => {
+  if (import.meta !== undefined && import.meta.env?.MODE) {
+    return import.meta.env.MODE
+  }
+  if (getIsClient()) {
+    // eslint-disable-next-line node/prefer-global/process
+    return process.env.NODE_ENV
+  }
+  return undefined
+}
+
+const getIsDev = () => {
+  const mode = getEnvMode()
+  return ['development', 'dev', 'test'].includes(mode ?? '')
+}
+
+const getIsProd = () => !getIsDev()
+
 
 export const env = {
   BASE_PATH,
@@ -32,6 +55,10 @@ export const env = {
   getIsClient,
   APP_TITLE,
   APP_DESCRIPTION,
+  getEnvMode,
+  getIsDev,
+  getIsProd,
+  getApplicationId,
 } as const
 
 Object.entries(env).forEach(([key, value]) => {

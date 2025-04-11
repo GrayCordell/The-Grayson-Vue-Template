@@ -130,6 +130,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="postcss">
+/* TODO, place color vars up here, ex. $bg-color-content-screen: var(--primary); */
 .demo-view {
   padding: 2rem;
   max-width: 1200px;

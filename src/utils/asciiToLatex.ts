@@ -1,4 +1,7 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
+/* eslint-disable */
 // noinspection SuspiciousTypeOfGuard,SpellCheckingInspection
+// noinspection SpellCheckingInspection
 /**
  *  @fileOverview This file contains the implementation of a AsciiMath parser. I do not understand the code, but it works.
  *  Taken from https://github.com/tylerlong/asciimath-to-latex/blob/master/src/index.ts
@@ -1389,9 +1392,9 @@ function AMTparseExpr(str: string, rightbracket: number | boolean) {
     }
   } while (
     ((symbol.ttype !== RIGHTBRACKET
-    // eslint-disable-next-line no-unmodified-loop-condition
+
       && (symbol.ttype !== LEFTRIGHT || rightbracket))
-    // eslint-disable-next-line no-unmodified-loop-condition
+
     || AMnestingDepth === 0)
   && symbol.output !== ''
   )

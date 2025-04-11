@@ -21,9 +21,9 @@ export const ROUTES = [
     component: () => import('../views/ProgressBarDemo.vue'),
   },
   {
-    path: `/${BASE}/math-problem-demo`,
-    name: 'MathProblemDemo',
-    component: () => import('../views/MathProblemDemo.vue'),
+    path: `/${BASE}/math-problem-creator`,
+    name: 'MathProblemCreationInterface',
+    component: () => import('../views/MathProblemCreationInterface.vue'),
   },
   { path: `/${BASE}`, redirect: `/${BASE}/` },
 

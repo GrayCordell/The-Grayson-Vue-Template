@@ -1,20 +1,17 @@
 import { useBasicStore } from '~/store/basicStore'
-import { useMathProblemStore } from '~/store/mathProblemStore'
 
-// interface PiniaStores {
-//   mathMapStore: typeof useMathMapStore
-//   bktStore: typeof useBKTStore
-//   currentMathModuleStore: typeof useCurrentMathModuleStore
-//   actionTrackerPluginStore: typeof useActionTrackerPluginStore
-//   itemIconStore: typeof useItemDefinitionStore
-// }
-interface PiniaStores {
+/**
+ * @fileoverview
+ * Place new Pinia stores here. This is useful for logging purposes later.
+ */
+
+export interface PiniaStores {
   basicStore: typeof useBasicStore
-  mathProblemStore: typeof useMathProblemStore
+  // ... add other stores here
 }
 export const piniaStores: PiniaStores = {
   basicStore: useBasicStore,
-  mathProblemStore: useMathProblemStore,
+  // ... add other stores here
 }
 
 export const usePiniaStores = (): { [K in keyof PiniaStores]: ReturnType<PiniaStores[K]> } => {
@@ -25,6 +22,10 @@ export const usePiniaStores = (): { [K in keyof PiniaStores]: ReturnType<PiniaSt
 
   return stores as { [K in keyof PiniaStores]: ReturnType<PiniaStores[K]> }
 }
+/**
+ * Get the entire Pinia state
+ * @returns Entire Pinia state
+ */
 export const getPiniaState = () => {
   const piniaStores = usePiniaStores()
   return Object.fromEntries(Object.entries(piniaStores).map(([key, store]) => [key, store.$state]))

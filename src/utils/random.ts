@@ -14,7 +14,7 @@ interface RandomIntArgs {
  * @param max
  * @param rng - Random number generator function, Can use mulberry32 for deterministic random numbers
  */
-export const randomInt = ({ min = 0, max = 10000000, rng = Math.random }: RandomIntArgs): number => {
+export const randomInt = ({ min = 0, max = 10_000_000, rng = Math.random }: RandomIntArgs): number => {
   if (min > max)
     [min, max] = [max, min]
   return Math.floor(rng() * (max - min + 1)) + min
@@ -39,10 +39,10 @@ export const getRandomFrom = <T>(arr: readonly T[], rng = Math.random): T => {
 export function mulberry32(seed: number): () => number {
   return function () {
     seed |= 0
-    seed = (seed + 0x6D2B79F5) | 0
+    seed = (seed + 0x6D_2B_79_F5) | 0
     let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
     t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+    return ((t ^ (t >>> 14)) >>> 0) / 4_294_967_296
   }
 }
 
@@ -50,22 +50,23 @@ export function mulberry32(seed: number): () => number {
 /**
  * Mulberry32 PRNG with persistence
  * Makes a deterministic random number generator that persists the seed in localStorage.
+ * @param saveName - Name of the save to use for localStorage, defaults to 'defaultSave'
  * @param initialSeed - Initial seed value, defaults to 1
  * TODO will possibly cause issues when users swap computers as that's not being saved in a store/online yet.
  */
 export function persistentMulberry32(saveName: string = 'defaultSave', initialSeed: number = 1): () => number {
   // First, try to get a stored seed from localStorage
   const storedSeed = localStorage.getItem(`prngSeed_${saveName}`)
-  let seed = storedSeed !== null ? Number(storedSeed) : initialSeed
+  let seed = storedSeed === null ? initialSeed : Number(storedSeed)
 
   return function () {
     seed |= 0
-    seed = (seed + 0x6D2B79F5) | 0
+    seed = (seed + 0x6D_2B_79_F5) | 0
     let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
     t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
     // Save the updated seed to localStorage for persistence
     localStorage.setItem(`prngSeed_${saveName}`, seed.toString())
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+    return ((t ^ (t >>> 14)) >>> 0) / 4_294_967_296
   }
 }
 

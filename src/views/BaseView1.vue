@@ -21,6 +21,18 @@
 </template>
 
 <style scoped lang="scss">
+// Color variables
+$bg-color-front-screen: var(--primary);
+$bg-color-front-screen-darker: var(--primary-darker);
+$color-decorative-elements: var(--accent);
+$color-decorative-elements-hover: var(--accent-hover);
+$color-subtitle-text: var(--secondary-lighter);
+$color-box-border: #000000;
+$color-white: #ffffff;
+$color-box-shadow: rgba(0, 0, 0, 0.3);
+$color-title-shadow: rgba(0, 0, 0, 0.1);
+$color-grip-shadow: #08080836;
+
 .front-screen {
   position: fixed; /* Fixed position to cover the entire screen. */
   top: 0;
@@ -34,7 +46,7 @@
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary), var(--primary-darker));
+  background: linear-gradient(135deg, $bg-color-front-screen, $bg-color-front-screen-darker);
   padding: 2rem;
   overflow: hidden;
 
@@ -46,7 +58,7 @@
     left: -50px;
     width: 200px;
     height: 200px;
-    background: var(--accent);
+    background: $color-decorative-elements;
     border-radius: 50%;
     opacity: 0.2;
     animation: pulse 6s ease-in-out infinite;
@@ -61,7 +73,7 @@
     right: -30px;
     width: 150px;
     height: 150px;
-    background: var(--accent-hover);
+    background: $color-decorative-elements-hover;
     border-radius: 20%;
     opacity: 0.2;
     animation: slide 8s ease-in-out infinite;
@@ -70,9 +82,9 @@
 }
 
 .box {
-  transition: box-shadow 0.3s ease;
-  border: 2px solid black;
-  box-shadow: 5px 6px 1px 2px rgb(0 0 0 / 30%);
+  transition: box-shadow 0.3s ease-in-out;
+  border: 2px solid $color-box-border;
+  box-shadow: 5px 6px 1px 2px $color-box-shadow;
   border-radius: 18px;
   width: 90%;
   min-width: 400px;
@@ -84,18 +96,20 @@
 }
 
 .box__grip {
-  background-color: var(--accent);
+  background-color: $color-decorative-elements;
   padding: 15px;
   display: flex;
   align-items: center;
-  box-shadow: -1px 5px 4px 0 #08080836;
-  border-bottom: 2px solid #000;
+  box-shadow: -1px 5px 4px 0 $color-grip-shadow;
+  border-bottom: 2px solid $color-box-border;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
 .box__content {
   display: flex;
 }
+
 .box__content__inner {
   position: relative;
   z-index: 1;
@@ -106,33 +120,33 @@
   .title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: $color-decorative-elements;
     font-family: 'Montserrat', sans-serif;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 5px $color-title-shadow;
   }
 
   .subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     line-height: 1.4;
-    color: var(--secondary-lighter);
+    color: $color-subtitle-text;
   }
 
   .cta-button {
     display: inline-block;
-    background-color: var(--accent);
-    color: var(--primary);
+    background-color: $color-decorative-elements;
+    color: $bg-color-front-screen;
     font-size: 1.25rem;
     font-weight: bold;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     text-decoration: none;
     transition:
-      background-color 0.3s ease,
-      transform 0.3s ease;
+      background-color 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
 
     &:hover {
-      background-color: var(--accent-hover);
+      background-color: $color-decorative-elements-hover;
       transform: translateY(-5px);
     }
   }

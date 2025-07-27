@@ -7,7 +7,7 @@ import App from './app/App.vue'
 import { createApp } from 'vue'
 import { piniaStores } from './store'
 import router from './router/index.js'
-
+import { attemptToParseFull } from './dsl'
 // Global styles
 import './app/setup/styles/index.pcss'
 
@@ -64,3 +64,8 @@ initTheme()
 actionTrackerPiniaPlugin(piniaStores)
 app.mount('#app') // Mount the app to the #app div in index.html
 
+
+//////////////
+
+
+attemptToParseFull()

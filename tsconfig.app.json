@@ -8,6 +8,8 @@
    "noUnusedLocals": false,
    "strictNullChecks": true,
    "allowJs": true,
+   "lib": ["esnext", "dom"],
+   "module": "esnext",
    "forceConsistentCasingInFileNames": true,
    "types": ["unplugin-icons/types/vue"],
    "paths": {

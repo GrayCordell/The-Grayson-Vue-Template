@@ -1,0 +1,347 @@
+{
+  "global": {
+    "variables": {
+      "#": {
+        "type": "simple",
+        "feature": "wall",
+        "meta": {}
+      },
+      ".": {
+        "type": "simple",
+        "feature": "air",
+        "meta": {}
+      },
+      "^": {
+        "type": "simple",
+        "feature": "air",
+        "meta": {}
+      },
+      "B": {
+        "type": "simple",
+        "feature": "idol",
+        "meta": {}
+      },
+      "?": {
+        "type": "simple",
+        "feature": "wall",
+        "meta": {}
+      }
+    }
+  },
+  "rooms": [
+    {
+      "name": "room1",
+      "theme": "temple",
+      "difficulty": "3",
+      "metadata": {
+        "room_name": "room1",
+        "theme": "temple",
+        "difficulty": "3",
+        "has_gold": "true"
+      },
+      "variables": {
+        "#": {
+          "type": "simple",
+          "feature": "wall",
+          "meta": {}
+        },
+        ".": {
+          "type": "simple",
+          "feature": "air",
+          "meta": {}
+        },
+        "^": {
+          "type": "simple",
+          "feature": "air",
+          "meta": {}
+        },
+        "B": {
+          "type": "simple",
+          "feature": "idol",
+          "meta": {}
+        },
+        "?": {
+          "type": "simple",
+          "feature": "wall",
+          "meta": {}
+        },
+        "g": {
+          "type": "simple",
+          "feature": "gold",
+          "meta": {
+            "value": 200
+          }
+        },
+        "s": {
+          "type": "simple",
+          "feature": "snake",
+          "meta": {
+            "low_health": true,
+            "named": "snakey"
+          }
+        },
+        "t": {
+          "type": "group",
+          "logic": "or",
+          "weights": [
+            20,
+            80
+          ],
+          "children": [
+            {
+              "type": "group",
+              "logic": "or",
+              "weights": [
+                10,
+                90
+              ],
+              "children": [
+                {
+                  "type": "simple",
+                  "feature": "trap",
+                  "meta": {}
+                },
+                {
+                  "type": "simple",
+                  "feature": "air",
+                  "meta": {}
+                }
+              ]
+            },
+            {
+              "type": "simple",
+              "feature": "wall",
+              "meta": {}
+            }
+          ]
+        }
+      },
+      "layout": [
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "gold",
+            "meta": {
+              "value": 200
+            }
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "snake",
+            "meta": {
+              "low_health": true,
+              "named": "snakey"
+            }
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "group",
+            "logic": "or",
+            "weights": [
+              20,
+              80
+            ],
+            "children": [
+              {
+                "type": "group",
+                "logic": "or",
+                "weights": [
+                  10,
+                  90
+                ],
+                "children": [
+                  {
+                    "type": "simple",
+                    "feature": "trap",
+                    "meta": {}
+                  },
+                  {
+                    "type": "simple",
+                    "feature": "air",
+                    "meta": {}
+                  }
+                ]
+              },
+              {
+                "type": "simple",
+                "feature": "wall",
+                "meta": {}
+              }
+            ]
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "idol",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "air",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          },
+          {
+            "type": "simple",
+            "feature": "wall",
+            "meta": {}
+          }
+        ]
+      ]
+    }
+  ]
+}
